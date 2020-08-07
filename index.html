@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css"
+        integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+  <title>Z-критерий</title>
+</head>
+<body>
+<header class="header">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="header-text">Z-критерий для равенства долей</h1>
+    </div>
+  </div>
+</header>
+<main class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12">
+      <p class="first-box">Этот критерий, или, как мы договорились, инструмент, следует использовать тогда, когда мы хотим провести A/B-тест
+        для какой-либо фичи, в которой нас интересует конверсия после использования нашей фичи. В таком случае мы можем
+        представить наши данные в виде испытаний Бернулли.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <p>Количество пользователей, которые просто воспользовались нашей фичей, представим как m.</p>
+      <p>Количество пользователей, которые воспользовались нашей фичей и сделали полезное действие, представим как n.</p>
+      <p>В таком случае математическое ожидание, или в нашем случае конверсия, будет равна отношению числа успешных наблюдений
+        ко всем наблюдениям:</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <img src="f1.PNG" alt="">
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <p>Итак, как посчитать Z-критерий для двух долей для A/B-теста.</p>
+      <p>1.	Считаем математическое ожидание для каждой из групп:</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-7">
+      <img src="f2.PNG" alt="">
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <p>2.	Считаем стандартное отклонение для каждой из выборок:</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-10">
+      <img src="f3.PNG" alt="">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <p>3.	Считаем Z-статистику:</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <img src="f4.PNG" alt="">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <p>Дальше мы смотрим, какое p-значение соответствует полученной Z-статистике, и делаем свой вывод.<p>
+      <p>4. Итак, давайте разберем кейс, в котором мы делаем улучшение на странице оформления заказа для группы B,
+        а в группе A все остается по-старому. И хотим понять, можем ли мы с уверенностью в 95% (1 − Ⲁ, при Ⲁ = 5%) сказать,
+        что результат, который мы получим, будет не случаен.</p>
+      <p>В таком случае у нас будут данные вот такого вида:</p>
+    </div>
+  </div>
+  <div class="table-box-1">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Группа А</th>
+        <th scope="col">UserId</th>
+        <th scope="col">Посетил страницу оформления заказа</th>
+        <th scope="col">Оформил заказ</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td scope="row">a</td>
+        <td>1a</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td scope="row">a</td>
+        <td>2a</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td scope="row">a</td>
+        <td>3a</td>
+        <td>1</td>
+        <td>0r</td>
+      </tr>
+      <tr>
+        <td scope="row">a</td>
+        <td>4a</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td scope="row">a</td>
+        <td>5a</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td scope="row">a</td>
+        <td>6a</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td scope="row">a</td>
+        <td>7a</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td scope="row">a</td>
+        <td>8a</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td scope="row">a</td>
+        <td>9a</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td scope="row">a</td>
+        <td>10a</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td scope="row">a</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+      </tr>
+      <tr>
+        <td scope="row">a</td>
+        <td>150a</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th scope="row" colspan="2">Total:</th>
+        <th>150</th>
+        <th>90</th>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-box-2">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Группа B</th>
+        <th scope="col">UserId</th>
+        <th scope="col">Посетил страницу оформления заказа</th>
+        <th scope="col">Оформил заказ</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td scope="row">b</td>
+        <td>1b</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td scope="row">b</td>
+        <td>2b</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td scope="row">b</td>
+        <td>3b</td>
+        <td>1</td>
+        <td>0r</td>
+      </tr>
+      <tr>
+        <td scope="row">b</td>
+        <td>4b</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td scope="row">b</td>
+        <td>5b</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td scope="row">b</td>
+        <td>6b</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td scope="row">b</td>
+        <td>7b</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td scope="row">b</td>
+        <td>8b</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td scope="row">b</td>
+        <td>9b</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td scope="row">b</td>
+        <td>10b</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td scope="row">b</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+      </tr>
+      <tr>
+        <td scope="row">b</td>
+        <td>130b</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th scope="row" colspan="2">Total:</th>
+        <th>130</th>
+        <th>81</th>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <p>Если кратко.</p>
+      <p>В группе A 150 человек посетили страницу оформления заказа и 90 – оформили заказ. В группе B 130 человек посетили
+        страницу оформления заказа и 81 – оформил заказ.
+      </p>
+      <p>Сразу сформулируем наши статистические гипотезы:</p>
+      <p>H0 – конверсии в группе A и B равны. <br>H1 – конверсии в группах не равны.</p>
+      <p>Давайте пройдемся по нашим формулам.</p>
+      <p>Математическое ожидание (в нашем случае еще это и конверсия) равно <br>для группы A:</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <img src="f5.PNG" alt="">
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <p>для группы B:</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <img src="f6.PNG" alt="">
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <img src="f7.PNG" alt="">
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <img src="f8.PNG" alt="">
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <p>Считаем Z-статистику:</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+      <img src="f9.PNG" alt="">
+    </div>
+    <div class="col-lg-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+    <p class="before-link">Теперь по полученному Z ищем p-значение в табличке (<a href="https://en.wikipedia.org/wiki/Standard_normal_table#
+    Complementary_cumulative" target="_blank">https://en.wikipedia.org/wiki/Standard_normal_table#Complementary_cumulative</a>):
+    <p class="text-formula">p-значение (при Z ≈ 0.34) = 0.3669.</p>
+    <p>А дальше мы сравниваем полученную Z-статистику с нашим пороговым значением α.</p>
+    <p>В нашем случае p-значение > Z → 0.3669 > 0.05 (5%), в таком случае мы не можем отвергнуть нашу нулевую гипотезу
+      о том, что конверсии равны.</p>
+    <p class="last-box">Проще говоря, полученная разница в конверсии случайна между группами и мы не можем сказать, что наши изменения
+      статистически значимо повлияли на конверсию.</p>
+    </div>
+  </div>
+</main>
+</body>
+</html>
